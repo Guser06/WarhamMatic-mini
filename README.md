@@ -22,7 +22,7 @@ Debido a la complejidad de las reglas no pude incluir mucho contenido, en esta l
 -Reglas de palabras clave
 -Gran parte de las "reglas del costado de la hoja de datos" (No hay dolor, baliza de teletransporte, etc.)
 -Armas opcionales
-Cómo utilizar
+##Cómo utilizar##
 1.- Clonar este repositorio: git clone https://github.com/Guser06/WarhamMatic-mini (No sé si esto funciona, es la primera vez que uso Github, agradeceré la ayuda)
 2.- Ejecutar el archivo principal
 3.- Todas las salidas estarán en español, las entradas también deben estar en español para que el código funcione correctamente.
