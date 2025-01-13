@@ -1,5 +1,7 @@
 # WarhamMatic -mini
 **ESP**
+*Descargo de responsabilidad*
+Yo no tengo ningún derecho sobre el uso o distribución de material licenciado u original, ni me responsabilizo por el mismo.
 Descripción:
 Este es un programa que creé como una herramienta para hacer que el set inicial de la décima edición de Warhammer sea más fácil de jugar para los recién llegados al juego.
 Te permitirá simular dos ejércitos y sus propiedades, movimientos, cargas y combates entre otras reglas básicas.
@@ -30,6 +32,8 @@ Nota: Lo programé usando Python 3.13.1, por lo que recomendaría tener al menos
 Nota 2: Usé VSCode 1.96.2 para programarlo, debería funcionar en cualquier otro IDE, pero si no, pruébalo en VSCode.
 
 **ENG**
+*Disclaimer*
+I do not have any rights to the use or distribution of licensed or original material, nor am I responsible for it.
 Description:
 This is a program I created as a tool for making the Warhammer 10th edition starter set easier to play for newcomers in the game.
 It´ll allow you to simulate two armies and their properties, movements, charges and combats among other basic rules.
