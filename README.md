@@ -30,6 +30,7 @@ Debido a la complejidad de las reglas no pude incluir mucho contenido, en esta l
 3.- Todas las salidas estarán en español, las entradas también deben estar en español para que el código funcione correctamente.
 Nota: Lo programé usando Python 3.13.1, por lo que recomendaría tener al menos esa versión o una más reciente instalada en su sistema.
 Nota 2: Usé VSCode 1.96.2 para programarlo, debería funcionar en cualquier otro IDE, pero si no, pruébalo en VSCode.
+Nota 3: Este proyecto podría expandirse mas para no solo abarcar la caja de inicio, si te interesa colaborar en este proyecto contactame a través de la red social en la que encontraste el link a este repositorio.
 
 **ENG**
 *Disclaimer*
@@ -62,3 +63,4 @@ Due to the complexity of the rules, I wasn´t able to include a lot of content, 
 3.- All outputs will be in spanish, inputs also have to be in spanish for the code working properly
 Note: I coded it using Python 3.13.1 so I would recommend having at least that version or newer installed in your sistem.
 Note 2: Used VSCode 1.96.2 for coding it, should work in any other IDE, but if it doesn´t try it in VSCode.
+Note 3: This project could be expanded further to not only cover the starter set, if you are interested in collaborating on this project, contact me through the social network where you found the link to this repository.
