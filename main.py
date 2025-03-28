@@ -1,12 +1,21 @@
 import random
 import numpy as np
 
+global dados_aux
+
+# Funcion para tirar dados
+
+def Dados(n_dados):
+    global res_dados
+    res_dados=[]
+    res_dados = np.array([random.randint(1, 6) for _ in range(1, (n_dados+1))])
+    return res_dados
+
 # Generar números que representen los dados tirados para iniciar la partida
 t = 0
-global res_dados, dados_aux
-res_dados = []
+
 while True:
-    dados = np.array([random.randint(1, 6) for _ in range(1, 10)])
+    dados = Dados(10)
     Dado_TurnoSM = random.choice(dados)
     print(f"Dado Space Marines {Dado_TurnoSM}")
     Dado_TurnoTy = random.choice(dados)
@@ -19,13 +28,6 @@ while True:
         print("Comienzan los Marines Espaciales")
         t = 2
         break
-
-# Funcion para tirar dados
-
-def Dados(n_dados):
-    res_dados.clear()
-    dados = np.array([random.randint(1, 6) for _ in range(1, (n_dados+1))])
-    return dados
 
 dados_aux = []
 
@@ -127,7 +129,7 @@ class ExtAsa(Individuo):
 class Infernus(Individuo):
     def __init__(self, num):
         super().__init__(f"Marine Infernus #{num}", [6, 4, 3, 2, 6, 1], [
-            12, dados[0], 6, 5, 0, 1], [0, 3, 3, 4, 0, 1])
+            12, random.choice(dados), 6, 5, 0, 1], [0, 3, 3, 4, 0, 1])
 
 # Clase Sargento Infernus
 
@@ -160,7 +162,7 @@ class EnjDevorador(Individuo):
 class VonRyan(Individuo):
     def __init__(self, num):
         super().__init__(f"Saltador de Von Ryan #{num}", [
-            10, 5, 4, 3, 9, 1], mele=[0, 6, 3, 6, 1, 1])
+            10, 5, 4, 3, 9, 1], rango=None, mele=[0, 6, 3, 6, 1, 1])
 
 # Clase Tyranido Primus
 
@@ -176,7 +178,7 @@ class Primus(Individuo):
 class Psicofago(Individuo):
     def __init__(self):
         super().__init__("Psicofago Tyranido", [8, 9, 3, 10, 4, 3], [
-            12, dados[8], 1, 6, 1, 1], [0, 3, 3, 6, 1, 2])
+            12, random.choice(dados), 1, 6, 1, 1], [0, (random.choice(dados))+3, 3, 6, 1, 2])
 
 # ----------------------------Crear objetos/tropas y grupos/unidades------------------------------------#
 
@@ -380,7 +382,7 @@ def Ataque(Unidad):
         print(f"La {Unidad.nombre} va a atacar a {blanco.nombre}")
         # Para cada tropa en la unidad tirar tantos dados como cualidad A del arma (cuantos ataques)
         for u in Unidad.miembros:
-            print(f"Atacara la tropa {u}")
+            print(f"Atacara la tropa {u.nombre}")
             res_dados = Dados(u.mele[1])
             # Para cada dado, filtrar si el dado es mayor o igual a cualidad HP del arma (el ataque impacta)
             for _ in res_dados:
@@ -498,7 +500,7 @@ def Disparo(Unidad):
             print(f"La {Unidad.nombre} va a atacar a {blanco.nombre}")
             # Para cada tropa en la unidad tirar tantos dados como cualidad A del arma (cuantos ataques)
             for u in Unidad.miembros:
-                print(f"Atacara la tropa {u}")
+                print(f"Atacara la tropa {u.nombre}")
                 res_dados = Dados(u.rango[1])
                 # Para cada dado, filtrar si el dado es mayor o igual a cualidad HP del arma (el ataque impacta)
                 for _ in res_dados:
@@ -634,7 +636,7 @@ def Carga(Unidad):
                 print(f"La {Unidad.nombre} va a atacar a {blanco.nombre}")
                 # Para cada tropa en la unidad tirar tantos dados como cualidad A del arma (cuantos ataques)
                 for u in Unidad.miembros:
-                    print(f"Atacara la tropa {u}")
+                    print(f"Atacara la tropa {u.nombre}")
                     res_dados = Dados(u.mele[1])
                     # Para cada dado, filtrar si el dado es mayor o igual a cualidad HP del arma (el ataque impacta)
                     for _ in res_dados:
@@ -810,5 +812,9 @@ while True:
         else:
             print("La acción seleccionada es inválida.")
 
+    if (t%2) == 0:
+        Uni_SM, Uni_Tyra = unidades, contra
+    else: Uni_Tyra, Uni_SM =  unidades, contra
+    
     cont_rondas += 1
     t += 1
